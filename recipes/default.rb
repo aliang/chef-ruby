@@ -37,12 +37,3 @@ file "/usr/local/etc/gemrc" do
   content "install: --no-rdoc --no-ri\nupdate:  --no-rdoc --no-ri\n"
   mode 0644
 end
-
-# install gems
-# TODO abstract this into an attribute?
-{"chef" => "10.14.4", "ohai" => "6.14.0"}.each do |g,v|
-  gem_package g do
-    version v
-    gem_binary('/usr/local/bin/gem')
-  end
-end
