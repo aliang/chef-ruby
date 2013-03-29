@@ -10,4 +10,4 @@ supports          "ubuntu"
   depends d
 end
 
-recipe            "ruby", "Installs Ruby from source, none of that rbenv ruby-build rvm crap"
+recipe            "default", "Installs Ruby from source, none of that rbenv ruby-build rvm crap"
