@@ -1,7 +1,7 @@
-maintainer        "Carlo Zottmann"
-maintainer_email  "carlo@zottmann.org"
+maintainer        "Alvin Liang"
+maintainer_email  "ayliang@gmail.com"
 license           "WTFPL"
-description       "Installs Ruby 1.9 from source"
+description       "Installs Ruby from source"
 long_description  IO.read(File.join(File.dirname(__FILE__), 'README.mdown'))
 version           "1.0"
 supports          "ubuntu"
@@ -10,4 +10,4 @@ supports          "ubuntu"
   depends d
 end
 
-recipe            "ruby-1.9", "Installs Ruby 1.9 from source."
+recipe            "ruby", "Installs Ruby from source, none of that rbenv ruby-build rvm crap"
