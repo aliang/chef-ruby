@@ -1,6 +1,8 @@
 include_recipe "apt"
 include_recipe "build-essential"
 
+# This could be wrong I suppose
+ruby_major_version = node[:ruby][:version][0..2]
 ruby_installed_check = "ruby -v | grep #{ node[:ruby][:version].gsub( '-', '' ) }"
 
 %w( wget zlib1g-dev libssl-dev libffi-dev libxml2-dev libncurses-dev libreadline-dev libyaml-0-2 libyaml-dev ).each do |pkg|
@@ -11,7 +13,7 @@ end
 
 execute "get & unpack #{ node[:ruby][:version] }" do
   user "root"
-  command "cd /usr/src && wget ftp://ftp.ruby-lang.org/pub/ruby/1.9/ruby-#{ node[:ruby][:version] }.tar.bz2 && tar xjf ruby-#{ node[:ruby][:version] }.tar.bz2 && cd ruby-#{ node[:ruby][:version] }"
+  command "cd /usr/src && wget ftp://ftp.ruby-lang.org/pub/ruby/#{ruby_major_version}/ruby-#{ node[:ruby][:version] }.tar.bz2 && tar xjf ruby-#{ node[:ruby][:version] }.tar.bz2 && cd ruby-#{ node[:ruby][:version] }"
   not_if ruby_installed_check
 end
 
