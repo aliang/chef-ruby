@@ -1,3 +1,4 @@
+name              "chef-ruby"
 maintainer        "Alvin Liang"
 maintainer_email  "ayliang@gmail.com"
 license           "WTFPL"
